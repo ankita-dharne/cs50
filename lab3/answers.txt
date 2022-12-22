@@ -1,0 +1,14 @@
+sort1 uses: bubble Sort
+
+How do you know?: 
+Time taken is the most for sorted file.
+
+sort2 uses: Merge Sort
+
+How do you know?: 
+Time taken is least as we know merge sort takes less time compared to both bubble and selection for any file.
+
+sort3 uses: Selection sort
+
+How do you know?: 
+Time taken is most even for sorted file when compared to sort1.

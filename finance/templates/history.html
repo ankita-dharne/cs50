@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+       <table class="table table-stripped">
+            <tr>
+                <th>Symbol</th>
+                <th>Type</th>
+                <th>Qty. of Shares</th>
+                <th>Share Price</th>
+                <th>Time</th>
+            </tr>
+            {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction['symbol'].upper()}}</td>
+                    <td>{{ transaction['type']}}</td>
+                    <td>{{ transaction['shares'] }}</td>
+                    <td>{{ usd(transaction['price']) }}</td>
+                    <td>{{ transaction['time'] }}</td>
+                </tr>
+            {% endfor %}
+            </tr>
+        </table>
+    </div>
+{% endblock %}

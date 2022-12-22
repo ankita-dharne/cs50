@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            window.addEventListener("load",function(){
+                //When correct answer is select, green color change
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function(){
+                    correct.style.backgroundColor = 'green';
+                    document.querySelector('#feedback1').innerHTML = 'Correct!'
+                });
+                //When incorrect answer is select, red color change
+                let incorrect = document.querySelectorAll('.incorrect');
+                for(let i =0; i< incorrect.length; i++){
+                    incorrect[i].addEventListener('click', function(){
+                        incorrect[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect!'
+                    });
+                }
+
+                document.querySelector('#check').addEventListener('click', function () {
+                    let input = document.querySelector('input');
+                    if(input.value ==='Beijing'){
+                        input.style.backgroundColor = 'green';
+                        document.querySelector('#feedback2').innerHTML = 'Correct!'
+                    }else {
+                        input.style.backgroundColor = 'red';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect!'
+                    }
+                });
+            });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which country won 2021 ICC Men's T20 World Cup</h3>
+                <button class = "incorrect">New Zealand</button>
+                <button class = "incorrect">India</button>
+                <button class = "correct">Australia</button>
+                <button class = "incorrect">England</button>
+                <p id="feedback1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Where will 2022 Winter Olympics be hosted?</h3>
+                <input class="text"></input>
+                <button id="check">Submit Answer</button>
+                <p id="feedback2"></p>
+            </div>
+
+        </div>
+    </body>
+</html>
